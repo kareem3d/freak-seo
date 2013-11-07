@@ -1,16 +1,11 @@
-@extends('freak::elements.detail')
-
-@section('tables')
+@if($seo)
 <table class="table table-striped table-detail-view">
-    <tbody>
+    <thead>
     <tr>
-        <th>URL</th>
-        <td>
-            <a href="{{ $seo->link }}">
-            {{ $seo->link }}
-            </a>
-        </td>
+        <th>SEO information</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
         <th>Title</th>
         <td>
@@ -31,4 +26,4 @@
     </tr>
     </tbody>
 </table>
-@stop
+@endif

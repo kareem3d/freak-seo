@@ -1,7 +1,8 @@
 <?php namespace Kareem3d\FreakSeo;
 
 use Illuminate\Support\ServiceProvider;
-use Kareem3d\Freak;
+use Kareem3d\Freak\ClientRepository;
+use Kareem3d\Freak\PackageRepository;
 use Kareem3d\Marketing\SEO;
 
 class FreakSeoServiceProvider extends ServiceProvider {
@@ -28,7 +29,8 @@ class FreakSeoServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        Freak\ClientRepository::register(new SEOClient());
+        ClientRepository::register(new SEOClient());
+        PackageRepository::register(new SEOPackage());
 	}
 
 	/**
