@@ -81,10 +81,6 @@ class SEOController extends FreakController {
     {
         $inputs = Input::get('SEO');
 
-        if(strpos($inputs['url'], 'http') === false)
-
-            $inputs['url'] = 'http://' . $inputs['url'];
-
         $seo = $this->seo->newInstance($inputs);
 
         return $this->jsonValidateResponse($seo);
@@ -99,10 +95,6 @@ class SEOController extends FreakController {
     public function postEdit($id)
     {
         $inputs = Input::get('SEO');
-
-        if(strpos($inputs['url'], 'http') === false)
-
-            $inputs['url'] = 'http://' . $inputs['url'];
 
         $seo = $this->seo->find($id)->fill($inputs);
 
